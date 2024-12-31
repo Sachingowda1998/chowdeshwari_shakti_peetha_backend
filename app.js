@@ -65,11 +65,12 @@ app.use("/api", testRoute);
 app.use("/api", Idohls);
 
 //server configurations.
-const PORT = process.env.port || 8000;
-app.listen(PORT, async () => {
+const BACKENDPORT = process.env.PORT || 5000;
+
+app.listen(BACKENDPORT, async () => {
   try {
     await connectDB();
-    console.log(`server listening on port:${PORT}`);
+    console.log(`server listening on port:${BACKENDPORT}`);
   } catch (error) {
     console.log(error, "app establhed error");
   }
